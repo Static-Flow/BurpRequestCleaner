@@ -1,0 +1,51 @@
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.8" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "cleanerTabPane"
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+				"columns": 3
+				"rows": 2
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Header Entropy Level:"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "headerLevelText"
+					"columns": 3
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "headerSetLevel"
+					"text": "Set"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "headerSetLevelActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Parameter Entropy Level"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "parameterLevelText"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "parameterSetLevel"
+					"text": "Set"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "parameterSetLevelActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "North"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
