@@ -103,14 +103,9 @@ public class CleanerPanel extends JPanel {
                 if(headerPieces.length > 1 && shouldCleanHeader(headerPieces[0])) {
                     String headerValue = headerPieces[1];
                     ExtensionState.getCallbacks().printOutput(headerValue);
-                    double entropy = ExtensionState.getShannonEntropy(headerValue);
+                    rInfoHeaders.set(i, rInfoHeaders.get(i).split(":")[0] +
+                            ": Redacted");
                     ExtensionState.getCallbacks().printOutput(rInfoHeaders.get(i));
-                    ExtensionState.getCallbacks().printOutput("Entropy: " + entropy);
-                    if (entropy > ExtensionState.getInstance().getHeaderEntropyLevel()) {
-                        rInfoHeaders.set(i, rInfoHeaders.get(i).split(":")[0] + " " +
-                                "Redacted");
-                        ExtensionState.getCallbacks().printOutput(rInfoHeaders.get(i));
-                    }
                 }
 
             }
